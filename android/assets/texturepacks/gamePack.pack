@@ -1,0 +1,96 @@
+
+gamePack.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+BlockCircleBig
+  rotate: false
+  xy: 1, 503
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+BlockSquare
+  rotate: false
+  xy: 1, 1
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+BlockCircleMedium
+  rotate: false
+  xy: 503, 753
+  size: 250, 250
+  orig: 250, 250
+  offset: 0, 0
+  index: -1
+PlayerBlue
+  rotate: false
+  xy: 503, 631
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+PlayerGreen
+  rotate: false
+  xy: 755, 883
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+PlayerViolet
+  rotate: false
+  xy: 503, 509
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+Turret
+  rotate: false
+  xy: 625, 631
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+BlockCircleSmall
+  rotate: false
+  xy: 755, 801
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+PowerupInvictus
+  rotate: false
+  xy: 877, 953
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+PowerupWeapon
+  rotate: false
+  xy: 503, 457
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+BulletBlue
+  rotate: false
+  xy: 625, 609
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+BulletGreen
+  rotate: false
+  xy: 755, 779
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+BulletViolet
+  rotate: false
+  xy: 837, 861
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1

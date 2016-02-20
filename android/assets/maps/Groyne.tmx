@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="25" tileheight="45" nextobjectid="333">
+ <layer name="Слой тайлов 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+  </data>
+ </layer>
+ <objectgroup color="#00aa00" name="WeaponSpawnPoints">
+  <object id="331" x="1113.85" y="1240.05">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#0500a4" name="InvictusSpawnPoints">
+  <object id="329" x="1172.94" y="3122.94">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup name="SpawnPoints">
+  <object id="253" x="1142.85" y="305.5" width="176" height="176">
+   <ellipse/>
+  </object>
+  <object id="263" x="1154.86" y="4090.57" width="176" height="176">
+   <ellipse/>
+  </object>
+  <object id="264" x="1119.14" y="2154.86" width="176" height="176">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#0096a4" name="Damagers">
+  <object id="319" x="1943.71" y="1472.29" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="320" x="222.286" y="1143.71" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="321" x="658" y="2772.29" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="322" x="1465.14" y="2815.14" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="323" x="2100.86" y="3215.14" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="324" x="122.286" y="2422.29" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="325" x="2200.86" y="2015.14" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="326" x="708" y="3315.14" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="327" x="2000.86" y="965.143" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="332" x="1023.15" y="1147.39" width="184" height="184">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff0000" name="Healers">
+  <object id="258" x="1686.4" y="3153.67" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="312" x="1175.71" y="3432.86" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="313" x="468.571" y="3040" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="314" x="1111.43" y="2761.43" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="316" x="1140" y="868.571" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="317" x="690" y="1290" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="318" x="1432.86" y="1254.29" width="120" height="120">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#000000" name="Blocks">
+  <object id="272" name="Square" type="Square" x="557.143" y="3700" width="1364.29" height="142.857"/>
+  <object id="273" name="Square" type="Square" x="532.141" y="2564.29" width="1364.29" height="142.857"/>
+  <object id="274" name="Square" type="Square" x="532.141" y="1792.86" width="1364.29" height="142.857"/>
+  <object id="275" name="Square" type="Square" x="539.284" y="635.714" width="1364.29" height="142.857"/>
+  <object id="276" name="Circle" type="Circle" x="678.571" y="942.857" width="207.143" height="207.143">
+   <ellipse/>
+  </object>
+  <object id="277" name="Circle" type="Circle" x="1000" y="1471.43" width="171.429" height="171.429">
+   <ellipse/>
+  </object>
+  <object id="279" name="Circle" type="Circle" x="1514.29" y="1550" width="142.857" height="142.857">
+   <ellipse/>
+  </object>
+  <object id="280" name="Circle" type="Circle" x="1650" y="950" width="164.286" height="164.286">
+   <ellipse/>
+  </object>
+  <object id="282" name="Circle" type="Circle" x="914.286" y="3078.57" width="128.571" height="128.571">
+   <ellipse/>
+  </object>
+  <object id="284" name="Circle" type="Circle" x="1635.71" y="3392.86" width="178.571" height="178.571">
+   <ellipse/>
+  </object>
+  <object id="285" name="Circle" type="Circle" x="1857.14" y="2900" width="235.714" height="235.714">
+   <ellipse/>
+  </object>
+  <object id="286" name="Circle" type="Circle" x="414.286" y="1514.29" width="92.8571" height="92.8571">
+   <ellipse/>
+  </object>
+  <object id="287" name="Circle" type="Circle" x="2150" y="2371.43" width="64.2857" height="64.2857">
+   <ellipse/>
+  </object>
+  <object id="288" name="Circle" type="Circle" x="1814.29" y="2057.14" width="42.8571" height="42.8571">
+   <ellipse/>
+  </object>
+  <object id="289" name="Circle" type="Circle" x="642.857" y="2314.29" width="64.2857" height="64.2857">
+   <ellipse/>
+  </object>
+  <object id="290" name="Circle" type="Circle" x="885.714" y="2050" width="64.2857" height="64.2857">
+   <ellipse/>
+  </object>
+  <object id="291" name="Circle" type="Circle" x="1442.86" y="2371.43" width="64.2857" height="64.2857">
+   <ellipse/>
+  </object>
+  <object id="292" name="Circle" type="Circle" x="1528.57" y="364.286" width="85.7143" height="85.7143">
+   <ellipse/>
+  </object>
+  <object id="293" name="Circle" type="Circle" x="650" y="78.5714" width="107.143" height="107.143">
+   <ellipse/>
+  </object>
+  <object id="294" name="Circle" type="Circle" x="350" y="400" width="78.5714" height="78.5714">
+   <ellipse/>
+  </object>
+  <object id="295" name="Circle" type="Circle" x="864.286" y="421.429" width="57.1429" height="57.1429">
+   <ellipse/>
+  </object>
+  <object id="296" name="Circle" type="Circle" x="1350" y="64.2857" width="64.2857" height="64.2857">
+   <ellipse/>
+  </object>
+  <object id="297" name="Circle" type="Circle" x="2014.29" y="235.714" width="78.5714" height="78.5714">
+   <ellipse/>
+  </object>
+  <object id="298" name="Circle" type="Circle" x="428.571" y="4085.71" width="150" height="150">
+   <ellipse/>
+  </object>
+  <object id="299" name="Circle" type="Circle" x="928.571" y="3942.86" width="92.8571" height="92.8571">
+   <ellipse/>
+  </object>
+  <object id="300" name="Circle" type="Circle" x="1600" y="4300" width="100" height="100">
+   <ellipse/>
+  </object>
+  <object id="301" name="Circle" type="Circle" x="1914.29" y="4064.29" width="100" height="100">
+   <ellipse/>
+  </object>
+  <object id="302" name="Circle" type="Circle" x="857.143" y="4292.86" width="50" height="50">
+   <ellipse/>
+  </object>
+  <object id="303" name="Circle" type="Circle" x="2192.86" y="1742.86" width="100" height="100">
+   <ellipse/>
+  </object>
+  <object id="304" name="Circle" type="Circle" x="2128.57" y="657.143" width="114.286" height="114.286">
+   <ellipse/>
+  </object>
+  <object id="305" name="Circle" type="Circle" x="214.286" y="878.571" width="71.4286" height="71.4286">
+   <ellipse/>
+  </object>
+  <object id="306" name="Circle" type="Circle" x="164.286" y="2042.86" width="85.7143" height="85.7143">
+   <ellipse/>
+  </object>
+  <object id="307" name="Circle" type="Circle" x="242.857" y="2828.57" width="71.4286" height="71.4286">
+   <ellipse/>
+  </object>
+  <object id="308" name="Circle" type="Circle" x="357.143" y="3307.14" width="71.4286" height="71.4286">
+   <ellipse/>
+  </object>
+  <object id="310" name="Circle" type="Circle" x="2185.71" y="3514.29" width="121.429" height="121.429">
+   <ellipse/>
+  </object>
+  <object id="311" name="Circle" type="Circle" x="135.714" y="3728.57" width="71.4286" height="71.4286">
+   <ellipse/>
+  </object>
+  <object id="315" name="Circle" type="Circle" x="1314.29" y="3078.57" width="121.429" height="121.429">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>

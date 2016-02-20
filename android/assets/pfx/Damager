@@ -1,0 +1,280 @@
+Damager
+- Delay -
+active: false
+- Duration - 
+lowMin: 300.0
+lowMax: 300.0
+- Count - 
+min: 1
+max: 5
+- Emission - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 5.0
+highMax: 10.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Life - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 1500.0
+highMax: 1700.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Life Offset - 
+active: false
+- X Offset - 
+active: false
+- Y Offset - 
+active: false
+- Spawn Shape - 
+shape: ellipse
+edges: false
+side: both
+- Spawn Width - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 170.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Spawn Height - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 170.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Scale - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 130.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 0.5882353
+timelineCount: 1
+timeline0: 0.0
+- Velocity - 
+active: true
+lowMin: 0.0
+lowMax: 0.0
+highMin: 20.0
+highMax: 20.0
+relative: false
+scalingCount: 1
+scaling0: 0.78431374
+timelineCount: 1
+timeline0: 0.0
+- Angle - 
+active: true
+lowMin: 0.0
+lowMax: 360.0
+highMin: 360.0
+highMax: 360.0
+relative: false
+scalingCount: 1
+scaling0: 0.0
+timelineCount: 1
+timeline0: 0.0
+- Rotation - 
+active: true
+lowMin: 0.0
+lowMax: 360.0
+highMin: 360.0
+highMax: 360.0
+relative: true
+scalingCount: 1
+scaling0: 0.0
+timelineCount: 1
+timeline0: 0.0
+- Wind - 
+active: false
+- Gravity - 
+active: false
+- Tint - 
+colorsCount: 3
+colors0: 0.5411765
+colors1: 0.03529412
+colors2: 0.03529412
+timelineCount: 1
+timeline0: 0.0
+- Transparency - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 1.0
+highMax: 1.0
+relative: false
+scalingCount: 5
+scaling0: 0.07017544
+scaling1: 0.98245615
+scaling2: 0.9649123
+scaling3: 0.9649123
+scaling4: 0.0
+timelineCount: 5
+timeline0: 0.0
+timeline1: 0.15068494
+timeline2: 0.5068493
+timeline3: 0.8767123
+timeline4: 1.0
+- Options - 
+attached: false
+continuous: false
+aligned: false
+additive: true
+behind: false
+premultipliedAlpha: false
+- Image Path -
+particle4.png
+
+
+Damager
+- Delay -
+active: false
+- Duration - 
+lowMin: 300.0
+lowMax: 300.0
+- Count - 
+min: 1
+max: 3
+- Emission - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 20.0
+highMax: 30.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Life - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 1500.0
+highMax: 1700.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Life Offset - 
+active: false
+- X Offset - 
+active: false
+- Y Offset - 
+active: false
+- Spawn Shape - 
+shape: point
+- Spawn Width - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 170.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Spawn Height - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 170.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Scale - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 200.0
+highMax: 250.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Velocity - 
+active: true
+lowMin: 0.0
+lowMax: 0.0
+highMin: 20.0
+highMax: 20.0
+relative: false
+scalingCount: 1
+scaling0: 0.78431374
+timelineCount: 1
+timeline0: 0.0
+- Angle - 
+active: true
+lowMin: 0.0
+lowMax: 360.0
+highMin: 360.0
+highMax: 360.0
+relative: false
+scalingCount: 1
+scaling0: 0.0
+timelineCount: 1
+timeline0: 0.0
+- Rotation - 
+active: true
+lowMin: 0.0
+lowMax: 360.0
+highMin: 360.0
+highMax: 360.0
+relative: true
+scalingCount: 1
+scaling0: 0.0
+timelineCount: 1
+timeline0: 0.0
+- Wind - 
+active: false
+- Gravity - 
+active: false
+- Tint - 
+colorsCount: 3
+colors0: 0.29411766
+colors1: 0.0
+colors2: 0.7254902
+timelineCount: 1
+timeline0: 0.0
+- Transparency - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 1.0
+highMax: 1.0
+relative: false
+scalingCount: 5
+scaling0: 0.07017544
+scaling1: 0.98245615
+scaling2: 0.9649123
+scaling3: 0.9649123
+scaling4: 0.0
+timelineCount: 5
+timeline0: 0.0
+timeline1: 0.15068494
+timeline2: 0.5068493
+timeline3: 0.8767123
+timeline4: 1.0
+- Options - 
+attached: false
+continuous: false
+aligned: false
+additive: true
+behind: false
+premultipliedAlpha: false
+- Image Path -
+particle3.png

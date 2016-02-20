@@ -1,0 +1,68 @@
+
+guiPack.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+SliderBG
+  rotate: false
+  xy: 1, 143
+  size: 400, 100
+  orig: 400, 100
+  offset: 0, 0
+  index: -1
+LeftJoystick
+  rotate: false
+  xy: 1, 1
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+RightJoystick
+  rotate: false
+  xy: 143, 1
+  size: 140, 140
+  orig: 140, 140
+  offset: 0, 0
+  index: -1
+Stick
+  rotate: false
+  xy: 403, 143
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+Cursor
+  rotate: false
+  xy: 285, 41
+  size: 50, 100
+  orig: 50, 100
+  offset: 0, 0
+  index: -1
+SliderKnob
+  rotate: false
+  xy: 337, 41
+  size: 50, 100
+  orig: 50, 100
+  offset: 0, 0
+  index: -1
+StatsBlue
+  rotate: false
+  xy: 285, 14
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+StatsGreen
+  rotate: false
+  xy: 389, 116
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+StatsViolet
+  rotate: false
+  xy: 312, 14
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1

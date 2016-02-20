@@ -1,0 +1,140 @@
+Damager
+- Delay -
+active: false
+- Duration - 
+lowMin: 300.0
+lowMax: 300.0
+- Count - 
+min: 1
+max: 12
+- Emission - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 30.0
+highMax: 40.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Life - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 250.0
+highMax: 250.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Life Offset - 
+active: false
+- X Offset - 
+active: false
+- Y Offset - 
+active: false
+- Spawn Shape - 
+shape: ellipse
+edges: false
+side: both
+- Spawn Width - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 170.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Spawn Height - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 170.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 1.0
+timelineCount: 1
+timeline0: 0.0
+- Scale - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 170.0
+highMax: 170.0
+relative: false
+scalingCount: 1
+scaling0: 0.47058824
+timelineCount: 1
+timeline0: 0.0
+- Velocity - 
+active: true
+lowMin: 0.0
+lowMax: 0.0
+highMin: 20.0
+highMax: 20.0
+relative: false
+scalingCount: 1
+scaling0: 0.78431374
+timelineCount: 1
+timeline0: 0.0
+- Angle - 
+active: true
+lowMin: 0.0
+lowMax: 360.0
+highMin: 360.0
+highMax: 360.0
+relative: false
+scalingCount: 1
+scaling0: 0.0
+timelineCount: 1
+timeline0: 0.0
+- Rotation - 
+active: true
+lowMin: 0.0
+lowMax: 360.0
+highMin: 360.0
+highMax: 360.0
+relative: true
+scalingCount: 1
+scaling0: 0.0
+timelineCount: 1
+timeline0: 0.0
+- Wind - 
+active: false
+- Gravity - 
+active: false
+- Tint - 
+colorsCount: 3
+colors0: 0.64705884
+colors1: 0.64705884
+colors2: 0.64705884
+timelineCount: 1
+timeline0: 0.0
+- Transparency - 
+lowMin: 0.0
+lowMax: 0.0
+highMin: 1.0
+highMax: 1.0
+relative: false
+scalingCount: 5
+scaling0: 0.07017544
+scaling1: 0.98245615
+scaling2: 0.9649123
+scaling3: 0.9649123
+scaling4: 0.0
+timelineCount: 5
+timeline0: 0.0
+timeline1: 0.15068494
+timeline2: 0.5068493
+timeline3: 0.8767123
+timeline4: 1.0
+- Options - 
+attached: false
+continuous: false
+aligned: false
+additive: true
+behind: false
+premultipliedAlpha: false
+- Image Path -
+particle4.png

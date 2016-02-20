@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="75">
+ <objectgroup color="#030304" name="Blocks">
+  <object id="8" type="Circle" x="672" y="324" width="448" height="448">
+   <ellipse/>
+  </object>
+  <object id="9" type="Circle" x="1976" y="1544" width="688" height="688">
+   <ellipse/>
+  </object>
+  <object id="10" type="Circle" x="112" y="1760" width="1024" height="1024">
+   <ellipse/>
+  </object>
+  <object id="11" type="Circle" x="1872" y="1048" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="12" type="Circle" x="1760" y="280" width="352" height="352">
+   <ellipse/>
+  </object>
+  <object id="13" type="Circle" x="1696" y="2648" width="216" height="216">
+   <ellipse/>
+  </object>
+  <object id="19" type="Circle" x="1224" y="972" width="512" height="512">
+   <ellipse/>
+  </object>
+  <object id="35" type="Circle" x="2608" y="608" width="552" height="552">
+   <ellipse/>
+  </object>
+  <object id="36" type="Circle" x="2600" y="2236" width="588" height="588">
+   <ellipse/>
+  </object>
+  <object id="45" type="Circle" x="-84" y="772" width="596" height="596">
+   <ellipse/>
+  </object>
+  <object id="54" type="Circle" x="1328" y="2320" width="216" height="216">
+   <ellipse/>
+  </object>
+  <object id="56" type="Circle" x="1534" y="1860" width="140" height="140">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#a40024" name="Healers">
+  <object id="14" x="1704" y="824" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="15" x="825.5" y="1065.5" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="17" x="1769.5" y="1553.5" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="18" x="1693.5" y="2225.5" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="39" x="2721.5" y="1317.5" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="48" x="1125.5" y="1773.5" width="120" height="120">
+   <ellipse/>
+  </object>
+  <object id="52" x="1396" y="388" width="120" height="120">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#04a4a4" name="Damagers">
+  <object id="22" x="2324" y="556" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="25" x="2812" y="1624" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="26" x="2244" y="1040" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="27" x="1480" y="1620" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="28" x="2236" y="2496" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="29" x="1196" y="2676" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="30" x="316" y="1416" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="31" x="1576" y="128" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="33" x="1164" y="112" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="34" x="1232" y="692" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="42" x="948" y="1436" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="49" x="1324" y="1972" width="184" height="184">
+   <ellipse/>
+  </object>
+  <object id="50" x="1712" y="1956" width="184" height="184">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup name="SpawnPoints">
+  <object id="57" x="2664" y="76" width="164" height="164">
+   <ellipse/>
+  </object>
+  <object id="58" x="2504" y="2928" width="164" height="164">
+   <ellipse/>
+  </object>
+  <object id="59" x="156" y="212" width="176" height="176">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#1b0fa4" name="InvictusSpawnPoints">
+  <object id="66" x="2140" y="1400" width="20" height="20">
+   <ellipse/>
+  </object>
+  <object id="67" x="1704" y="1788" width="20" height="20">
+   <ellipse/>
+  </object>
+  <object id="68" x="1376" y="1860" width="20" height="20">
+   <ellipse/>
+  </object>
+  <object id="69" x="1636" y="2108" width="24" height="24">
+   <ellipse/>
+  </object>
+  <object id="70" x="620" y="1448" width="20" height="20">
+   <ellipse/>
+  </object>
+  <object id="71" x="1580" y="2596" width="28" height="28">
+   <ellipse/>
+  </object>
+  <object id="72" x="1616" y="712" width="16" height="16">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#13a403" name="WeaponSpawnPoints">
+  <object id="60" x="2208" y="828" width="28" height="28">
+   <ellipse/>
+  </object>
+  <object id="61" x="2000" y="1432" width="24" height="24">
+   <ellipse/>
+  </object>
+  <object id="62" x="1744" y="1840" width="28" height="28">
+   <ellipse/>
+  </object>
+  <object id="63" x="1440" y="1888" width="28" height="28">
+   <ellipse/>
+  </object>
+  <object id="64" x="1596" y="2052" width="20" height="20">
+   <ellipse/>
+  </object>
+  <object id="65" x="724" y="1288" width="20" height="20">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>
