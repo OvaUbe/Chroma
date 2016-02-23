@@ -789,7 +789,7 @@ public class MenuScreen extends AbstractGameScreen
 					
 			}
 			else if(client.isServerFull())
-				labelClientState.setText("ServerisFull!");
+				labelClientState.setText("Server is full!");
 		}
 	}
 	
