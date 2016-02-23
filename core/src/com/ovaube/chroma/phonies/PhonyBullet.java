@@ -1,4 +1,4 @@
-package com.ovaube.chroma.flyweights;
+package com.ovaube.chroma.phonies;
 
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
@@ -8,7 +8,7 @@ import com.ovaube.chroma.util.Assets;
 import com.ovaube.chroma.util.Constants;
 import com.ovaube.chroma.util.PlayerColor;
 
-public class FlyweightBullet extends AbstractFlyweight
+public class PhonyBullet extends AbstractPhony
 {	
 	private ParticleEffect effectBulletDeath;
 	
@@ -19,7 +19,7 @@ public class FlyweightBullet extends AbstractFlyweight
 	private boolean justFired;
 	private int lifeCycle;
 	
-	public FlyweightBullet(Vector2 position, PlayerColor color)
+	public PhonyBullet(Vector2 position, PlayerColor color)
 	{
 		this.position = position;
 		isDead = false;
@@ -75,8 +75,6 @@ public class FlyweightBullet extends AbstractFlyweight
 			justFired = false;
 		}
 		
-		batch.begin();
-		
 		if(lifeCycle > 0)
 		{
 			batch.draw(textureRegion,
@@ -103,7 +101,5 @@ public class FlyweightBullet extends AbstractFlyweight
 				effectBulletDeath.draw(batch);
 			}
 		}
-			
-		batch.end();
 	}
 }

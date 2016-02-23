@@ -21,20 +21,15 @@ public class Damager extends AbstractObject
 	public Damager(Vector2 defaultPosition, World world)
 	{
 		super(defaultPosition, world);
-		
-		createBody();
-		setTexturesAndEffects();
+
+		init();
 	}
 	
 	@Override
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{		
 		effectDamager.update(deltaTime);
-		batch.begin();
-		
 		effectDamager.draw(batch);
-		
-		batch.end();
 		
 		if(effectDamager.isComplete())
 			effectDamager.reset();
@@ -44,7 +39,8 @@ public class Damager extends AbstractObject
 	protected void setTexturesAndEffects() 
 	{
 		effectDamager = new ParticleEffect(Assets.instance.assetPFX.damager);	
-		effectDamager.setPosition(body.getPosition().x * Constants.PPM, body.getPosition().y * Constants.PPM);
+		effectDamager.setPosition((defaultPosition.x + radius) * Constants.PPM,
+				  				  (defaultPosition.y + radius) * Constants.PPM);
 		effectDamager.start();
 	}
 

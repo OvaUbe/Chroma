@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import com.ovaube.chroma.flyweights.FlyweightPlayer;
+import com.ovaube.chroma.phonies.PhonyPlayer;
 import com.ovaube.chroma.handlers.ClientUpdater;
 import com.ovaube.chroma.handlers.ServerWorldController;
 import com.ovaube.chroma.objects.Player;
@@ -32,7 +32,7 @@ public class HUD
 	private TextureRegion statsViolet = Assets.instance.assetTextures.statsViolet;
 	
 	private Player player;
-	private FlyweightPlayer flyweightPlayer;
+	private PhonyPlayer flyweightPlayer;
 	
 	private SpriteBatch batch;
 	private OrthographicCamera camera;
@@ -43,7 +43,7 @@ public class HUD
 	private boolean isFlyweight;
 	
 	private Array<Player> stats = new Array<Player>();
-	private Array<FlyweightPlayer> flyweightStats = new Array<FlyweightPlayer>();
+	private Array<PhonyPlayer> flyweightStats = new Array<PhonyPlayer>();
 	
 	private Vector2 leftJoystickCenter = new Vector2();
 	private Vector2 stickCenter = new Vector2();
@@ -58,7 +58,7 @@ public class HUD
 		leftJoystickCenter.set(camera.viewportHeight / 4, camera.viewportHeight / 4);
 	}
 	
-	public HUD(FlyweightPlayer flyweightPlayer, ClientUpdater clientUpdater, OrthographicCamera camera)
+	public HUD(PhonyPlayer flyweightPlayer, ClientUpdater clientUpdater, OrthographicCamera camera)
 	{
 		this.flyweightPlayer = flyweightPlayer;
 		this.clientUpdater = clientUpdater;
@@ -68,11 +68,9 @@ public class HUD
 		leftJoystickCenter.set(camera.viewportHeight / 4, camera.viewportHeight / 4);
 	}
 	
-	public void render(SpriteBatch batch, Float roundTime)
+	public void render(SpriteBatch batch, float roundTime)
 	{
 		this.batch = batch;
-		
-		batch.begin();
 		
 		/*
 		fontWhite.draw(batch,
@@ -90,8 +88,6 @@ public class HUD
 		renderStats();
 		
 		renderMessages();
-		
-		batch.end();
 	}
 	
 	private void renderHealth()
@@ -213,12 +209,12 @@ public class HUD
 		// Sorted output
 		if(isFlyweight)
 		{
-			for(Map.Entry<PlayerColor, FlyweightPlayer> entry : clientUpdater.getPlayers().entrySet())
+			for(Map.Entry<PlayerColor, PhonyPlayer> entry : clientUpdater.getPlayers().entrySet())
 				flyweightStats.add(entry.getValue());
 			
-			flyweightStats.sort(new Comparator<FlyweightPlayer>() {
+			flyweightStats.sort(new Comparator<PhonyPlayer>() {
                                     @Override
-                                    public int compare(FlyweightPlayer arg0, FlyweightPlayer arg1) {
+                                    public int compare(PhonyPlayer arg0, PhonyPlayer arg1) {
                                         return (arg1.getKills() / arg1.getDeaths() - arg0.getKills() / arg0.getDeaths());
                                     }
                                 }
@@ -235,7 +231,7 @@ public class HUD
 					camera.viewportHeight * 9.5f / 9.8f);
 			
 			float i = 9f;
-			for(FlyweightPlayer player : flyweightStats)
+			for(PhonyPlayer player : flyweightStats)
 			{
 				switch(player.getColor())
 				{

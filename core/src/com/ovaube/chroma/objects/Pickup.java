@@ -39,8 +39,7 @@ public class Pickup extends AbstractObject
 		isDead = false;
 		isDeleted = false;
 		
-		setTexturesAndEffects();
-		createBody();
+		init();
 	}
 	
 	public boolean isPickedUp()
@@ -81,8 +80,6 @@ public class Pickup extends AbstractObject
 	@Override
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{
-		batch.begin();
-		
 		if(!isPickedUp)
 		{
 			batch.draw(textureRegion, 
@@ -110,7 +107,6 @@ public class Pickup extends AbstractObject
 					isEnded = true;
 			}
 		}
-		batch.end();
 	}
 
 	@Override

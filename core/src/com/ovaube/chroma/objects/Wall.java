@@ -18,22 +18,17 @@ public class Wall extends AbstractObject
 	{
 		super(defaultPosition, world);
 		
-		setTexturesAndEffects();
-		createBody();
+		init();
 	}
 	
 	@Override
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{
-		batch.begin();
-		
 		batch.disableBlending();
 		batch.draw(textureRegion, 0f, 0f,
 				defaultPosition.x * Constants.PPM,
 				defaultPosition.y * Constants.PPM);
 		batch.enableBlending();
-		
-		batch.end();
 	}
 
 	@Override

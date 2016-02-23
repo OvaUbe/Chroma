@@ -14,13 +14,13 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.ovaube.chroma.GUI.HUD;
-import com.ovaube.chroma.flyweights.FlyweightBlock;
-import com.ovaube.chroma.flyweights.FlyweightBullet;
-import com.ovaube.chroma.flyweights.FlyweightDamager;
-import com.ovaube.chroma.flyweights.FlyweightHealer;
-import com.ovaube.chroma.flyweights.FlyweightPickup;
-import com.ovaube.chroma.flyweights.FlyweightPlayer;
-import com.ovaube.chroma.flyweights.FlyweightWall;
+import com.ovaube.chroma.phonies.PhonyBlock;
+import com.ovaube.chroma.phonies.PhonyBullet;
+import com.ovaube.chroma.phonies.PhonyDamager;
+import com.ovaube.chroma.phonies.PhonyHealer;
+import com.ovaube.chroma.phonies.PhonyPickup;
+import com.ovaube.chroma.phonies.PhonyPlayer;
+import com.ovaube.chroma.phonies.PhonyWall;
 import com.ovaube.chroma.networking.ChromaClient;
 import com.ovaube.chroma.networking.PacketInputInfo;
 import com.ovaube.chroma.networking.PacketWorldInfo;
@@ -41,19 +41,19 @@ public class ClientUpdater implements Disposable
 	
 	private PlayerColor color;
 	
-	private HashMap<PlayerColor, FlyweightPlayer> players = new HashMap<PlayerColor, FlyweightPlayer>();
-	private Array<FlyweightBlock> blocks = new Array<FlyweightBlock>();
-	private HashMap<Integer, FlyweightBullet> bullets = new HashMap<Integer, FlyweightBullet>();
-	private Array<FlyweightDamager> damagers = new Array<FlyweightDamager>();
-	private Array<FlyweightHealer> healers = new Array<FlyweightHealer>();
+	private HashMap<PlayerColor, PhonyPlayer> players = new HashMap<PlayerColor, PhonyPlayer>();
+	private Array<PhonyBlock> blocks = new Array<PhonyBlock>();
+	private HashMap<Integer, PhonyBullet> bullets = new HashMap<Integer, PhonyBullet>();
+	private Array<PhonyDamager> damagers = new Array<PhonyDamager>();
+	private Array<PhonyHealer> healers = new Array<PhonyHealer>();
 	
 	private Array<Integer> bulletsToRemove = new Array<Integer>();
 	Array<PlayerColor> playersToRemove = new Array<PlayerColor>();
 	
-	private FlyweightPickup pickupInvictus;
-	private FlyweightPickup pickupWeapon;
+	private PhonyPickup pickupInvictus;
+	private PhonyPickup pickupWeapon;
 	
-	private FlyweightWall wall;
+	private PhonyWall wall;
 	
 	private SpriteBatch batch;	
 	private HUD hud;
@@ -91,36 +91,36 @@ public class ClientUpdater implements Disposable
 			}
 		}
 		
-		createFlyweightPlayers();
-		createFlyweightBlocks();
-		createFlyweightDamagers();
-		createFlyweightHealers();
-		createFlyweightWall();
+		createPhonyPlayers();
+		createPhonyBlocks();
+		createPhonyDamagers();
+		createPhonyHealers();
+		createPhonyWall();
 		
 		initCameras();
 	}
 
-	private void createFlyweightPlayers() 
+	private void createPhonyPlayers() 
 	{
 		for(Map.Entry<PlayerColor, String> entry : client.getPacketStart().startInfos.entrySet())
 		{			
-			FlyweightPlayer player = new FlyweightPlayer(entry.getKey(), entry.getValue());
+			PhonyPlayer player = new PhonyPlayer(entry.getKey(), entry.getValue());
 			players.put(entry.getKey(), player);
 		}
 	}
 
-	private void createFlyweightBlocks() 
+	private void createPhonyBlocks() 
 	{
 		MapLayer layer;
 		layer = (MapLayer) map.getLayers().get("Blocks");
 		
 		for(MapObject object : layer.getObjects())
 		{
-			FlyweightBlock block;
+			PhonyBlock block;
 
 			if(object.getProperties().get("type").toString().equals("Circle"))
 			{
-				block = new FlyweightBlock(new Vector2(
+				block = new PhonyBlock(new Vector2(
 						(Float)object.getProperties().get("x") / Constants.PPM, 
 						(Float)object.getProperties().get("y") / Constants.PPM),
 						new Vector2(
@@ -130,7 +130,7 @@ public class ClientUpdater implements Disposable
 			}
 			else if(object.getProperties().get("type").toString().equals("Square"))
 			{
-				block = new FlyweightBlock(new Vector2(
+				block = new PhonyBlock(new Vector2(
 					(Float)object.getProperties().get("x") / Constants.PPM, 
 					(Float)object.getProperties().get("y") / Constants.PPM),
 					new Vector2(
@@ -146,37 +146,37 @@ public class ClientUpdater implements Disposable
 		
 	}
 
-	private void createFlyweightDamagers() 
+	private void createPhonyDamagers() 
 	{
 		MapLayer layer;
 		layer = (MapLayer) map.getLayers().get("Damagers");
 		// Create damagers from map properties
 		for(MapObject object : layer.getObjects())
 		{
-			FlyweightDamager damager = new FlyweightDamager(new Vector2(
+			PhonyDamager damager = new PhonyDamager(new Vector2(
 					(Float)object.getProperties().get("x") / Constants.PPM, 
 					(Float)object.getProperties().get("y") / Constants.PPM));
 			damagers.add(damager);
 		}		
 	}
 
-	private void createFlyweightHealers() 
+	private void createPhonyHealers() 
 	{
 		MapLayer layer;
 		layer = (MapLayer) map.getLayers().get("Healers");
 		// Create healers from map properties
 		for(MapObject object : layer.getObjects())
 		{
-			FlyweightHealer healer = new FlyweightHealer(new Vector2(
+			PhonyHealer healer = new PhonyHealer(new Vector2(
 					(Float)object.getProperties().get("x") / Constants.PPM, 
 					(Float)object.getProperties().get("y") / Constants.PPM));
 			healers.add(healer);
 		}		
 	}
 	
-	private void createFlyweightWall() 
+	private void createPhonyWall() 
 	{
-		wall = new FlyweightWall(new Vector2(
+		wall = new PhonyWall(new Vector2(
 				(Integer)map.getProperties().get("width") * (Integer)map.getProperties().get("tilewidth") / Constants.PPM, 
 				(Integer)map.getProperties().get("height") * (Integer)map.getProperties().get("tileheight") / Constants.PPM));		
 	}
@@ -201,17 +201,18 @@ public class ClientUpdater implements Disposable
 		
 		// Render objects
 		batch.setProjectionMatrix(camera.combined);
+		batch.begin();
 
 		wall.renderAndUpdate(batch, deltaTime);
-		for(FlyweightBlock block : blocks)
+		for(PhonyBlock block : blocks)
 			block.renderAndUpdate(batch, deltaTime);
-		for(Map.Entry<PlayerColor, FlyweightPlayer> entry : players.entrySet())
+		for(Map.Entry<PlayerColor, PhonyPlayer> entry : players.entrySet())
 			entry.getValue().renderAndUpdate(batch, deltaTime);
-		for(Map.Entry<Integer, FlyweightBullet> entry : bullets.entrySet())
+		for(Map.Entry<Integer, PhonyBullet> entry : bullets.entrySet())
 			entry.getValue().renderAndUpdate(batch, deltaTime);
-		for(FlyweightDamager damager : damagers)
+		for(PhonyDamager damager : damagers)
 			damager.renderAndUpdate(batch, deltaTime);
-		for(FlyweightHealer healer : healers)
+		for(PhonyHealer healer : healers)
 			healer.renderAndUpdate(batch, deltaTime);
 		if(pickupInvictus != null)
 			pickupInvictus.renderAndUpdate(batch, deltaTime);
@@ -222,6 +223,8 @@ public class ClientUpdater implements Disposable
 		hudCamera.update();
 		batch.setProjectionMatrix(hudCamera.combined);
 		hud.render(batch, currentTime);
+
+		batch.end();
 		
 		// Follow player
 		camera.position.set(
@@ -303,28 +306,28 @@ public class ClientUpdater implements Disposable
 		{
 			Integer key = entry.getKey();
 			BulletInfo bulletInfo = entry.getValue();
-			FlyweightBullet currentFlyweightBullet;
+			PhonyBullet currentPhonyBullet;
 			
 			// If bullet is present both on server and on client
 			if(bullets.containsKey(key))
 			{
-				currentFlyweightBullet = bullets.get(key);
+				currentPhonyBullet = bullets.get(key);
 				
-				currentFlyweightBullet.setFlagIsDead(bulletInfo.isDead);
-				currentFlyweightBullet.setFlagJustFired(bulletInfo.justFired);
-				currentFlyweightBullet.setLifeCycle(bulletInfo.lifeCycle);
-				currentFlyweightBullet.setPosition(bulletInfo.positionX, bulletInfo.positionY);
+				currentPhonyBullet.setFlagIsDead(bulletInfo.isDead);
+				currentPhonyBullet.setFlagJustFired(bulletInfo.justFired);
+				currentPhonyBullet.setLifeCycle(bulletInfo.lifeCycle);
+				currentPhonyBullet.setPosition(bulletInfo.positionX, bulletInfo.positionY);
 			}
 			// If bullet is present only on server - we have to add it to client world
 			else
 			{
-				currentFlyweightBullet = new FlyweightBullet(new Vector2(bulletInfo.positionX, bulletInfo.positionY), bulletInfo.color);
-				bullets.put(key, currentFlyweightBullet);
+				currentPhonyBullet = new PhonyBullet(new Vector2(bulletInfo.positionX, bulletInfo.positionY), bulletInfo.color);
+				bullets.put(key, currentPhonyBullet);
 			}
 		}
 		// If bullet is dead on server, but present on client - we have to delete it on client
 		// Cannot remove from hashmap being iterated
-		for(Map.Entry<Integer, FlyweightBullet> entry : bullets.entrySet())
+		for(Map.Entry<Integer, PhonyBullet> entry : bullets.entrySet())
 		{
 			Integer key = entry.getKey();
 			
@@ -338,7 +341,7 @@ public class ClientUpdater implements Disposable
 		
 		// Handle players
 		// Remove disconnected players
-		for(Map.Entry<PlayerColor, FlyweightPlayer> entry : players.entrySet())
+		for(Map.Entry<PlayerColor, PhonyPlayer> entry : players.entrySet())
 			if(!packet.playersInfo.containsKey(entry.getKey()))
 				playersToRemove.add(entry.getKey());
 		for(PlayerColor color : playersToRemove)
@@ -351,7 +354,7 @@ public class ClientUpdater implements Disposable
 			PlayerColor key = entry.getKey();
 			PlayerInfo playerInfo = entry.getValue();
 			
-			FlyweightPlayer currentPlayer = players.get(key);
+			PhonyPlayer currentPlayer = players.get(key);
 			
 			currentPlayer.setAngle(playerInfo.currentAngle);
 			currentPlayer.setFlagBurning(playerInfo.isBurning);
@@ -380,7 +383,7 @@ public class ClientUpdater implements Disposable
 		// Dead here, present on server - add to client world
 		else if(pickupInvictus == null && !pickupInvictusInfo.isNull)
 		{
-			pickupInvictus = new FlyweightPickup(new Vector2(
+			pickupInvictus = new PhonyPickup(new Vector2(
 					pickupInvictusInfo.positionX, 
 					pickupInvictusInfo.positionY),
 					PickupType.INVICTUS);
@@ -399,7 +402,7 @@ public class ClientUpdater implements Disposable
 		// Dead here, present on server - add to client world
 		else if(pickupWeapon == null && !pickupWeaponInfo.isNull)
 		{
-			pickupWeapon = new FlyweightPickup(new Vector2(
+			pickupWeapon = new PhonyPickup(new Vector2(
 					pickupWeaponInfo.positionX, 
 					pickupWeaponInfo.positionY),
 					PickupType.WEAPON);
@@ -411,7 +414,7 @@ public class ClientUpdater implements Disposable
 		currentTime = packet.currentTime;
 	}
 	
-	public HashMap<PlayerColor, FlyweightPlayer> getPlayers()
+	public HashMap<PlayerColor, PhonyPlayer> getPlayers()
 	{
 		return players;
 	}

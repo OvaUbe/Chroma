@@ -1,4 +1,4 @@
-package com.ovaube.chroma.flyweights;
+package com.ovaube.chroma.phonies;
 
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
@@ -11,7 +11,7 @@ import com.ovaube.chroma.util.ChromaPreferences;
 import com.ovaube.chroma.util.Constants;
 import com.ovaube.chroma.util.PlayerColor;
 
-public class FlyweightPlayer extends AbstractFlyweight
+public class PhonyPlayer extends AbstractPhony
 {
 	private PlayerColor color;
 	
@@ -29,7 +29,7 @@ public class FlyweightPlayer extends AbstractFlyweight
 	
 	private TextureRegion textureTurret;
 	
-	private boolean isInvictible;
+	private boolean isInvicible;
 	private boolean isTurret;
 	private boolean isDead;
 	private boolean isFastCooldown;
@@ -47,7 +47,7 @@ public class FlyweightPlayer extends AbstractFlyweight
 	
 	private float currentAngle;
 
-	public FlyweightPlayer(PlayerColor color, String nickname)
+	public PhonyPlayer(PlayerColor color, String nickname)
 	{
 		position = new Vector2();
 		
@@ -55,7 +55,7 @@ public class FlyweightPlayer extends AbstractFlyweight
 		this.color = color;
 		
 		isTurret = false;
-		isInvictible = true;
+		isInvicible = true;
 		isDead = false;
 		isFastCooldown = false;
 		isBurning = false;
@@ -124,7 +124,7 @@ public class FlyweightPlayer extends AbstractFlyweight
 	
 	public void setFlagInvictible(boolean isInvictible)
 	{
-		this.isInvictible = isInvictible;
+		this.isInvicible = isInvictible;
 	}
 	
 	public void setFlagDamaging(boolean isDamaging)
@@ -242,8 +242,6 @@ public class FlyweightPlayer extends AbstractFlyweight
 		{
 			soundDamage.play(ChromaPreferences.instance.volumeSound);
 		}
-		
-		batch.begin();
 
 		if(health != 0)
 		{
@@ -257,7 +255,7 @@ public class FlyweightPlayer extends AbstractFlyweight
 					1f, 1f,
 					currentAngle * MathUtils.radiansToDegrees);
 			
-			if(isInvictible)
+			if(isInvicible)
 			{
 				effectShield.setPosition(position.x * Constants.PPM, position.y * Constants.PPM);
 				effectShield.update(deltaTime);
@@ -303,7 +301,7 @@ public class FlyweightPlayer extends AbstractFlyweight
 						currentAngle * MathUtils.radiansToDegrees);	
 			}
 			
-			if(isBurning && !isInvictible)
+			if(isBurning && !isInvicible)
 			{
 				effectBurning.setPosition(position.x * Constants.PPM, position.y * Constants.PPM);
 				effectBurning.update(deltaTime);
@@ -329,7 +327,5 @@ public class FlyweightPlayer extends AbstractFlyweight
 				effectExplosion.draw(batch);
 			}
 		}
-		
-		batch.end();
 	}
 }

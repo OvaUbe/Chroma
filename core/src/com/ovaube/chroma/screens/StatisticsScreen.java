@@ -14,7 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.ovaube.chroma.flyweights.FlyweightPlayer;
+import com.ovaube.chroma.phonies.PhonyPlayer;
 import com.ovaube.chroma.objects.Player;
 import com.ovaube.chroma.util.Assets;
 import com.ovaube.chroma.util.ChromaPreferences;
@@ -31,7 +31,7 @@ public class StatisticsScreen extends AbstractGameScreen
 	private LabelStyle greenLabelStyle = ChromaSkin.instance.greenLabelStyle;
 	
 	private HashMap<PlayerColor, Player> players = new HashMap<PlayerColor, Player>();
-	private HashMap<PlayerColor, FlyweightPlayer> flyweightPlayers = new HashMap<PlayerColor, FlyweightPlayer>();
+	private HashMap<PlayerColor, PhonyPlayer> flyweightPlayers = new HashMap<PlayerColor, PhonyPlayer>();
 	
 	private boolean isFlyweight;
 	
@@ -42,7 +42,7 @@ public class StatisticsScreen extends AbstractGameScreen
 		isFlyweight = false;
 	}
 	
-	public StatisticsScreen(Game game, HashMap<PlayerColor, FlyweightPlayer> flyweightPlayers)
+	public StatisticsScreen(Game game, HashMap<PlayerColor, PhonyPlayer> flyweightPlayers)
 	{
 		super(game);
 		this.flyweightPlayers.putAll(flyweightPlayers);
@@ -131,9 +131,9 @@ public class StatisticsScreen extends AbstractGameScreen
 		
 		if(isFlyweight)
 		{
-			for(Map.Entry<PlayerColor, FlyweightPlayer> entry : flyweightPlayers.entrySet())
+			for(Map.Entry<PlayerColor, PhonyPlayer> entry : flyweightPlayers.entrySet())
 			{
-				FlyweightPlayer player = entry.getValue();
+				PhonyPlayer player = entry.getValue();
 				PlayerColor color = entry.getKey();
 				
 				Label labelNickname = new Label(player.getNickname(), grayLabelStyle);

@@ -25,8 +25,13 @@ public abstract class AbstractObject
 	}
 	
 	protected abstract void setTexturesAndEffects();
-	
 	protected abstract void createBody();
+
+	protected void init()
+	{
+		setTexturesAndEffects();
+		createBody();
+	}
 	
 	public abstract void renderAndUpdate(SpriteBatch batch, float deltaTime);
 	

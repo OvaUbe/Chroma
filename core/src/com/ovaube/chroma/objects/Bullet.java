@@ -38,12 +38,11 @@ public class Bullet extends AbstractObject
 		isDead = false;
 		isEnded = false;
 		isDeleted = false;
-		
+
 		lifeCycle = Constants.BULLET_LIFECYCLE;
 		
-		setTexturesAndEffects();
-		createBody();
-		
+		init();
+
 		justFired = true;
 	}
 	
@@ -101,8 +100,6 @@ public class Bullet extends AbstractObject
 			justFired = false;
 		}
 		
-		batch.begin();
-		
 		if(lifeCycle > 0)
 		{
 			batch.draw(textureRegion,
@@ -111,30 +108,28 @@ public class Bullet extends AbstractObject
 		}
 		else
 		{
-			if(!isDead)
+			if (!isDead)
 			{
 				effectBulletDeath.setPosition(
-						body.getPosition().x * Constants.PPM, 
+						body.getPosition().x * Constants.PPM,
 						body.getPosition().y * Constants.PPM);
 				effectBulletDeath.start();
 				// DEAD!
 				isDead = true;
-				
+
 				soundHit.play(ChromaPreferences.instance.volumeSound);
 			}
 			// Render particles after death
 			else
 			{
 				effectBulletDeath.update(deltaTime);
-				
+
 				effectBulletDeath.draw(batch);
-				
-				if(effectBulletDeath.isComplete())
+
+				if (effectBulletDeath.isComplete())
 					isEnded = true;
 			}
 		}
-			
-		batch.end();
 	}
 
 	@Override

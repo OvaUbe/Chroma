@@ -1,4 +1,4 @@
-package com.ovaube.chroma.flyweights;
+package com.ovaube.chroma.phonies;
 
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -6,12 +6,12 @@ import com.badlogic.gdx.math.Vector2;
 import com.ovaube.chroma.util.Assets;
 import com.ovaube.chroma.util.Constants;
 
-public class FlyweightHealer extends AbstractFlyweight
+public class PhonyHealer extends AbstractPhony
 {
 	private ParticleEffect effectHealer;
 	private final float radius = 0.6f;
 	
-	public FlyweightHealer(Vector2 defaultPosition)
+	public PhonyHealer(Vector2 defaultPosition)
 	{
 		this.position = defaultPosition;
 		
@@ -24,11 +24,7 @@ public class FlyweightHealer extends AbstractFlyweight
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{
 		effectHealer.update(deltaTime);
-		batch.begin();
-		
 		effectHealer.draw(batch);
-		
-		batch.end();
 		
 		if(effectHealer.isComplete())
 			effectHealer.reset();		

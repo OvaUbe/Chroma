@@ -1,4 +1,4 @@
-package com.ovaube.chroma.flyweights;
+package com.ovaube.chroma.phonies;
 
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
@@ -8,7 +8,7 @@ import com.ovaube.chroma.util.Assets;
 import com.ovaube.chroma.util.Constants;
 import com.ovaube.chroma.util.PickupType;
 
-public class FlyweightPickup extends AbstractFlyweight
+public class PhonyPickup extends AbstractPhony
 {
 	private ParticleEffect effectPickup;
 	private Sound soundPickup;
@@ -16,7 +16,7 @@ public class FlyweightPickup extends AbstractFlyweight
 	private boolean isPickedUp;
 	private boolean isDead;
 	
-	public FlyweightPickup(Vector2 position, PickupType pickupType)
+	public PhonyPickup(Vector2 position, PickupType pickupType)
 	{
 		this.position = position;
 		isPickedUp = false;
@@ -50,8 +50,6 @@ public class FlyweightPickup extends AbstractFlyweight
 	@Override
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{
-		batch.begin();
-		
 		if(!isPickedUp)
 		{
 			batch.draw(textureRegion, 
@@ -76,8 +74,6 @@ public class FlyweightPickup extends AbstractFlyweight
 				effectPickup.draw(batch);
 			}
 		}
-		batch.end();
-		
 	}
 
 }

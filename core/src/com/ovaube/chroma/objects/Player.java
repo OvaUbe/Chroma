@@ -70,17 +70,18 @@ public class Player extends AbstractObject
 	public Player(Vector2 defaultPosition, World world, PlayerColor color, String nickname, Array<Vector2> spawnPoints)
 	{
 		super(defaultPosition, world);
+
 		this.color = color;
 		this.nickname = nickname;
 		this.spawnPoints.addAll(spawnPoints);
+
+		init();
 		
 		spawnTimeout = Constants.MAX_SPAWN_TIMEOUT;
 		healTimeout = Constants.MAX_COOLDOWN;
 		damageTimeout = Constants.MAX_COOLDOWN;
 		fastCooldownTimeout = Constants.MAX_BONUS_FAST_COOLDOWN_TIMEOUT;
-		
-		createBody();
-		setTexturesAndEffects();
+
 		setTurretFixture();
 		
 		kills = 0;
@@ -134,11 +135,11 @@ public class Player extends AbstractObject
 		
 		// Clamp some stuff
 		body.setLinearVelocity(
-				MathUtils.clamp(body.getLinearVelocity().x, 
-						-Constants.MAX_PLAYER_VELOCITY, 
+				MathUtils.clamp(body.getLinearVelocity().x,
+						-Constants.MAX_PLAYER_VELOCITY,
 						Constants.MAX_PLAYER_VELOCITY),
-				MathUtils.clamp(body.getLinearVelocity().y, 
-						-Constants.MAX_PLAYER_VELOCITY, 
+				MathUtils.clamp(body.getLinearVelocity().y,
+						-Constants.MAX_PLAYER_VELOCITY,
 						Constants.MAX_PLAYER_VELOCITY));
 	}
 	
@@ -511,8 +512,6 @@ public class Player extends AbstractObject
 		{
 			soundDamage.play(ChromaPreferences.instance.volumeSound);
 		}
-		
-		batch.begin();
 
 		if(health != 0)
 		{
@@ -596,8 +595,6 @@ public class Player extends AbstractObject
 					isEnded = true;
 			}
 		}
-		
-		batch.end();
 	}
 
 	@Override

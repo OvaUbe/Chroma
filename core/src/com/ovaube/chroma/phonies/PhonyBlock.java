@@ -1,4 +1,4 @@
-package com.ovaube.chroma.flyweights;
+package com.ovaube.chroma.phonies;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -6,11 +6,11 @@ import com.ovaube.chroma.util.Assets;
 import com.ovaube.chroma.util.BlockType;
 import com.ovaube.chroma.util.Constants;
 
-public class FlyweightBlock extends AbstractFlyweight
+public class PhonyBlock extends AbstractPhony
 {
 	private Vector2 size;
 	
-	public FlyweightBlock(Vector2 defaultPosition, Vector2 size, BlockType type)
+	public PhonyBlock(Vector2 defaultPosition, Vector2 size, BlockType type)
 	{
 		this.position = defaultPosition;
 		this.size = size;
@@ -31,14 +31,10 @@ public class FlyweightBlock extends AbstractFlyweight
 	@Override
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{
-		batch.begin();
-		
 		batch.draw(textureRegion, 
 				position.x * Constants.PPM, 
 				position.y * Constants.PPM, 
 				size.x * Constants.PPM, 
 				size.y * Constants.PPM);
-		
-		batch.end();		
 	}
 }

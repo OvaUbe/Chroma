@@ -25,9 +25,8 @@ public class Healer extends AbstractObject
 		super(defaultPosition, world);
 		
 		isEmpty = true;
-		
-		createBody();
-		setTexturesAndEffects();
+
+		init();
 	}
 	
 	public boolean isEmpty()
@@ -49,11 +48,7 @@ public class Healer extends AbstractObject
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{		
 		effectHealer.update(deltaTime);
-		batch.begin();
-		
 		effectHealer.draw(batch);
-		
-		batch.end();
 		
 		if(effectHealer.isComplete())
 			effectHealer.reset();
@@ -63,7 +58,8 @@ public class Healer extends AbstractObject
 	protected void setTexturesAndEffects() 
 	{
 		effectHealer = new ParticleEffect(Assets.instance.assetPFX.healer);	
-		effectHealer.setPosition(body.getPosition().x * Constants.PPM, body.getPosition().y * Constants.PPM);
+		effectHealer.setPosition((defaultPosition.x + radius) * Constants.PPM,
+                                 (defaultPosition.y + radius) * Constants.PPM);
 		effectHealer.start();
 	}
 

@@ -50,6 +50,7 @@ public class ServerWorldRenderer implements Disposable
 	{	
 		// Render objects
 		batch.setProjectionMatrix(camera.combined);
+		batch.begin();
 		
 		worldController.getWall().renderAndUpdate(batch, deltaTime);
 		for(Map.Entry<PlayerColor, Player> entry : worldController.getPlayers().entrySet())
@@ -71,6 +72,8 @@ public class ServerWorldRenderer implements Disposable
 		hudCamera.update();
 		batch.setProjectionMatrix(hudCamera.combined);
 		hud.render(batch, worldController.getTime());
+
+		batch.end();
 		
 		// Follow player
 		camera.position.set(

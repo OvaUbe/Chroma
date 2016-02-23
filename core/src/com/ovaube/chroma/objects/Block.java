@@ -25,22 +25,17 @@ public class Block extends AbstractObject
 		this.size = new Vector2(size);
 		this.type = type;
 		
-		setTexturesAndEffects();
-		createBody();
+		init();
 	}
 	
 	@Override
 	public void renderAndUpdate(SpriteBatch batch, float deltaTime) 
 	{
-		batch.begin();
-		
 		batch.draw(textureRegion, 
 				(body.getPosition().x - (size.x / 2)) * Constants.PPM, 
 				(body.getPosition().y - (size.y / 2)) * Constants.PPM, 
 				size.x * Constants.PPM, 
 				size.y * Constants.PPM);
-		
-		batch.end();
 	}
 
 	@Override
