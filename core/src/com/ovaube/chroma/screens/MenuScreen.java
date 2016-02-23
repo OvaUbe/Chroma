@@ -122,14 +122,13 @@ public class MenuScreen extends AbstractGameScreen
 	@Override
 	public void show()
 	{
-		stage = new Stage(
-				new StretchViewport(Constants.VIEWPORT_WIDTH, Constants.VIEWPORT_HEIGHT));
+		stage = new Stage(new StretchViewport(Constants.VIEWPORT_WIDTH,
+											  Constants.VIEWPORT_HEIGHT));
 		if(debug)
 			stage.setDebugAll(true);
 		
 		Gdx.input.setInputProcessor(stage);
-		
-		ChromaPreferences.instance.load();
+
 		changeVolumeMusic(ChromaPreferences.instance.volumeMusic);
 		changeVolumeSound(ChromaPreferences.instance.volumeSound);
 			
@@ -137,8 +136,7 @@ public class MenuScreen extends AbstractGameScreen
 		
 		music.setLooping(true);
 		music.play();
-		
-		Gdx.input.setCatchBackKey(true);
+
 		// Set menu effect
 		batch = new SpriteBatch();
 		
