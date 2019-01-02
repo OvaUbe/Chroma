@@ -18,8 +18,6 @@ close range. There are also two types of pickups: red one and a green one. Red m
 for 15 seconds. Green makes player invicible for 10 seconds. To be on top you should keep the Kills / Deaths 
 statistics higher than others.
 
-It's laggy as hell, though
-
 [Download .apk](https://github.com/OvaUbe/Chroma/blob/master/android/build/outputs/apk/ChromaApp.apk?raw=true)
 
 Have fun!
